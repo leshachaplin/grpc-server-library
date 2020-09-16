@@ -1,12 +1,13 @@
 syntax = "proto3";
 
 package protocol;
+option go_package = "./protocol";
 
 message Book{
-    string name = 1;
-    string author = 2;
-    string genre = 3;
-    int32 year = 4;
+    string Name = 1;
+    string Author = 2;
+    string Genre = 3;
+    int32 Year = 4;
 }
 
 message EmptyRequest {
