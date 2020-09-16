@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package protocol;
+
+message Book{
+    string name = 1;
+    string author = 2;
+    string genre = 3;
+    int32 year = 4;
+}
+
+message EmptyRequest {
+}
+
+message GetAllBooksResponse {
+    repeated Book books = 1;
+}
+
+message GetBookByNameRequest {
+    string name = 1;
+}
+
+message GetBookResponse {
+    Book book = 1;
+}
+
+message GetBooksByAuthorRequest {
+    string author = 1;
+}
+
+message AddBookRequest {
+    Book book = 1;
+}
+
+message DeleteBookRequest {
+    string name = 1;
+}
+
+message EmptyResponse{
+}
+
+service BookService {
+    rpc GetAllBooks(EmptyRequest) returns(GetAllBooksResponse);
+    rpc GetBookByName(GetBookByNameRequest) returns(GetBookResponse);
+    rpc GetBookByAuthor(GetBooksByAuthorRequest) returns(GetBookResponse);
+    rpc AddBook(AddBookRequest) returns(EmptyResponse);
+    rpc DeleteBook(DeleteBookRequest) returns(EmptyResponse);
+}
