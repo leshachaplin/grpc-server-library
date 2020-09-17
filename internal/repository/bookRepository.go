@@ -50,11 +50,9 @@ func (r *BookRepository) GetAllBooks(ctx context.Context) ([]types.Book, error) 
 	book := types.Book{}
 	var books = make([]types.Book, 0)
 	for rows.Next() {
-		i := 0
 		err := rows.StructScan(&book)
-		books[i] = book
+		books = append(books, book)
 		_ = err
-		i++
 	}
 	return books, err
 }

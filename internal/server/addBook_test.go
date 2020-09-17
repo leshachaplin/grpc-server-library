@@ -20,8 +20,8 @@ func TestServer_AddBook(t *testing.T) {
 	client := protocol.NewBookServiceClient(clientConnInterface)
 
 	requestAddBook := &protocol.AddBookRequest{Book: &protocol.Book{
-		Name:   "little prince1",
-		Author: "st ekz",
+		Name:   "little prince2",
+		Author: "leshiy1",
 		Genre:  "pos",
 		Year:   110,
 	}}

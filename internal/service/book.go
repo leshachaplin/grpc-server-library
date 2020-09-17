@@ -33,7 +33,7 @@ func (s *BookService) GetBookByName(ctx context.Context, name string) (*types.Bo
 }
 
 func (s *BookService) GetBookByAuthor(ctx context.Context, author string) (*types.Book, error) {
-	book, err := s.books.GetBookByName(ctx, author)
+	book, err := s.books.GetBookByAuthor(ctx, author)
 	if err != nil {
 		return nil, err
 	}

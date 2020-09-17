@@ -1606,6 +1606,7 @@ true posixrules
     <language id="40" parent="4" name="sql"/>
     <table id="41" parent="29" name="book">
       <ObjectId>127190</ObjectId>
+      <Outdated>1</Outdated>
       <Owner>su</Owner>
       <StateNumber>75802</StateNumber>
     </table>

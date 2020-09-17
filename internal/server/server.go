@@ -54,7 +54,7 @@ func (s *Server) GetBookByName(ctx context.Context, req *protocol.GetBookByNameR
 }
 
 func (s *Server) GetBookByAuthor(ctx context.Context, req *protocol.GetBooksByAuthorRequest) (*protocol.GetBookResponse, error) {
-	book, err := s.Rpc.GetBookByName(ctx, req.Author)
+	book, err := s.Rpc.GetBookByAuthor(ctx, req.Author)
 	if err != nil {
 		log.Errorf("book not found by author: %s", err)
 		return nil, err
