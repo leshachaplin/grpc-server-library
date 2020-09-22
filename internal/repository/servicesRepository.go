@@ -68,7 +68,7 @@ func (r *RepositoryOfServiceState) AddService(ctx context.Context, typeOfService
 	return err
 }
 
-func (r *RepositoryOfServiceState) DeleteClaims(ctx context.Context, typeOfService, url string) error {
+func (r *RepositoryOfServiceState) DeleteService(ctx context.Context, typeOfService, url string) error {
 	var err error
 	_, err = r.db.C("services").RemoveAll(bson.M{"key": typeOfService, "value": url})
 	return err
